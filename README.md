@@ -1,9 +1,15 @@
-# Fabric Example Mod
+# Aquatic Torches
 
-## Setup
+![Screenshot of torch underwater](https://raw.githubusercontent.com/realmayus/aquatictorches/1.18/screenshot.png)
+### No more dark oceans
 
-For setup instructions please see the [fabric wiki page](https://fabricmc.net/wiki/tutorial:setup) that relates to the IDE that you are using.
+Ever wondered what to do with glowing ink sacs aside from glowing item frames? Aquatic Torches adds **waterproof torches** to the game, which can be used just like normal, coal-fired torches but underwater.
 
-## License
+Slightly brighter at light level 15, Aquatic Torches enable you to illuminate the entrance of your underwater bases and bring light to the vast darkness of the oceans.
 
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
+It's available for Fabric and [Forge](https://github.com/realmayus/aquatictorches) on both 1.17 and 1.18.
+
+## [More Info & Download on CurseForge](https://www.curseforge.com/minecraft/mc-mods/aquatic-torches)
+
+## Recipe
+![Like normal torch recipe, but with glowing ink sack instead of coal](recipe.png)
