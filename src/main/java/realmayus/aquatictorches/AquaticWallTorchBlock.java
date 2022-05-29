@@ -3,9 +3,11 @@ package realmayus.aquatictorches;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
 import net.minecraft.block.*;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.ItemPlacementContext;
+import net.minecraft.item.ItemStack;
 import net.minecraft.particle.ParticleEffect;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.state.StateManager;
@@ -32,8 +34,6 @@ public class AquaticWallTorchBlock extends WallTorchBlock implements Waterloggab
 
     public static final DirectionProperty FACING = HorizontalFacingBlock.FACING;
     public static final IntProperty FLOWING_WATER = IntProperty.of("water_level", 1, 8);
-
-    public static final Map<Direction, VoxelShape> AABBS = Maps.newEnumMap(ImmutableMap.of(Direction.NORTH, Block.createCuboidShape(5.5, 3.0, 11.0, 10.5, 13.0, 16.0), Direction.SOUTH, Block.createCuboidShape(5.5, 3.0, 0.0, 10.5, 13.0, 5.0), Direction.WEST, Block.createCuboidShape(11.0, 3.0, 5.5, 16.0, 13.0, 10.5), Direction.EAST, Block.createCuboidShape(0.0, 3.0, 5.5, 5.0, 13.0, 10.5)));
     public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
 
 
@@ -106,7 +106,7 @@ public class AquaticWallTorchBlock extends WallTorchBlock implements Waterloggab
     @Override
     public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
         if (state.get(WATERLOGGED)) {
-            world.createAndScheduleFluidTick(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
+            world.getFluidTickScheduler().schedule(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
         }
         if (direction.getOpposite() == state.get(FACING) && !state.isFullCube(world, pos)) {
             return Blocks.AIR.getDefaultState();
