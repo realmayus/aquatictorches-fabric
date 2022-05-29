@@ -1,6 +1,6 @@
 # Aquatic Torches
 
-![Screenshot of torch underwater]([screenshot.png](https://raw.githubusercontent.com/realmayus/aquatictorches/1.18/screenshot.png))
+![Screenshot of torch underwater](https://raw.githubusercontent.com/realmayus/aquatictorches/1.18/screenshot.png)
 ### No more dark oceans
 
 Ever wondered what to do with glowing ink sacs aside from glowing item frames? Aquatic Torches adds **waterproof torches** to the game, which can be used just like normal, coal-fired torches but underwater.
