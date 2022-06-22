@@ -2,6 +2,7 @@ package realmayus.aquatictorches;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.Material;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -15,8 +16,8 @@ import org.slf4j.LoggerFactory;
 
 public class AquaticTorches implements ModInitializer {
 	public static final Logger LOGGER = LoggerFactory.getLogger("aquatictorches");
-	public static final AquaticTorchBlock AQUATIC_TORCH = new AquaticTorchBlock(FabricBlockSettings.of(Material.DECORATION).noCollision().breakInstantly().lightLevel(15).sounds(BlockSoundGroup.WOOD), ParticleTypes.FLAME);
-	public static final AquaticWallTorchBlock AQUATIC_WALL_TORCH = new AquaticWallTorchBlock(FabricBlockSettings.of(Material.DECORATION).noCollision().breakInstantly().lightLevel(15).sounds(BlockSoundGroup.WOOD), ParticleTypes.FLAME);
+	public static final AquaticTorchBlock AQUATIC_TORCH = new AquaticTorchBlock(FabricBlockSettings.of(Material.DECORATION).noCollision().breakInstantly().luminance(15).sounds(BlockSoundGroup.WOOD), ParticleTypes.FLAME);
+	public static final AquaticWallTorchBlock AQUATIC_WALL_TORCH = new AquaticWallTorchBlock(FabricBlockSettings.of(Material.DECORATION).noCollision().breakInstantly().luminance(15).sounds(BlockSoundGroup.WOOD), ParticleTypes.FLAME);
 	@Override
 	public void onInitialize() {
 		Registry.register(Registry.BLOCK, new Identifier("aquatictorches", "aquatic_torch"), AQUATIC_TORCH);
